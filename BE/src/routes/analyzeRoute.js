@@ -16,7 +16,6 @@ router.post("/", async (req,res)=>{
         if(checkOpenPhish(url)){
             riskScore.link += 20;
             maliciousURL.push(url);
-            issue.push(`Phishing URL detected: ${url}`);
         };
     }
 

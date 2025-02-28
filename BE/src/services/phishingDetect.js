@@ -31,7 +31,7 @@ const detectPhishing = (email) =>{
     const urlRegex = /(https?:\/\/[^\s]+)/g;
     const urls = email.match(urlRegex) || [];
 
-    const words = email.replace(/[.,:;!?()]/g, "").split(" ");
+    const words = email.replace(/[.,:;!?()"]/g, "").split(" ");
 
     
 

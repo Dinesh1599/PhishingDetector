@@ -47,6 +47,12 @@ body{
   border-radius: 5px;
 }
 
+
+.split2{
+  background-color: rgba(179, 179, 179, 0.555);
+  overflow-y: scroll;
+}
+
 .theStartBtn{
    display: flex;
    justify-content: space-evenly;
@@ -128,4 +134,19 @@ textarea{
   height: 99%;
   padding-top: 3px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.orangewe{
+  color: #F09819;
+  font-weight: bolder;
+}
+
+.yellowe{
+  color: rgb(255, 238, 0);
+  font-weight: bolder;
+}
+
+.rewe{
+  color: rgb(182, 6, 6);
+  font-weight: bolder;
 }

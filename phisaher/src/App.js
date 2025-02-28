@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const [input, setInput] = useState("")
   const [result, setResult] = useState(null)
+ 
 
   const checkPhis = async()=>{
        try{
@@ -13,10 +14,11 @@ function App() {
 
        }catch(error){
         console.error("Error analyzing email:", error);
-       }
-
-       if(result == null)
         alert("Missing Input Text")
+       }
+      
+
+       console.log(result)
   }
 
   const reset = ()=>{
@@ -39,12 +41,58 @@ function App() {
           <div className = 'bodySplit'>
             <div className = 'split1'>
               <textarea
-               placeHolder ="Add Text Here"
+               placeholder ="Add Text Here"
                value={input} 
                onChange={(e) => setInput(e.target.value)}
               />
             </div>
-            <div className = 'split2'>2</div>
+            <div className = 'split2'>
+              {
+                result != null?(
+                  <div>
+                    <div>
+                      <h2>Probable phishing keywords</h2>
+                      <ul>
+                      {
+                        (result.data.issue.map((word,key)=>{
+                          return(
+                            <li className="yellowe" key={key}>{word}</li>
+                          )
+                        }))
+                      } 
+                      </ul>
+                    </div>
+                    <div>
+                      <h2>Suspicious Phrases:</h2>
+                      <ul>
+                      {
+                        (result.data.errorWords.map((word,key)=>{
+                          return(
+                            <li className="orangewe" key={key}>{word}</li>
+                          )
+                        }))
+                      } 
+                      </ul>
+                    </div>
+                    <div>
+                      <h2>Malicious URLs</h2>
+                      <ul>
+                      {
+                        (result.data.maliciousURL.map((word,key)=>{
+                          return(
+                            <li className="rewe" key={key}>{word}</li>
+                          )
+                        }))
+                      } 
+                      </ul>
+                    </div>
+                    
+                  </div>
+                ) : (
+                  <p>2</p>
+                )
+              }
+            </div>
 
           </div>
         </div>
