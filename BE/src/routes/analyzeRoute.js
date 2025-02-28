@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const {detectPhishing} = require('../services/phishingDetect')
+const { checkOpenPhish } = require("../services/openPhish");
 
 router.post("/", async (req,res)=>{
     const{emailContent} = req.body;
@@ -12,15 +13,14 @@ router.post("/", async (req,res)=>{
     let maliciousURL = [];
 
      for (let url of urls){
-        const isPhishing = await checkPhishing(url);
-         if(isPhishing) {
-            riskScore +=20;
-            maliciousURL.push(url);
-            issue.push(`Phishing URL found: ${url}`)
-        }
+        if(checkOpenPhishq(url)){
+            riskScore += 20;
+            maliciousUrls.push(url);
+            issue.push(`Phishing URL detected: ${url}`);
+        };
     }
 
-    res.json({riskScore, issues, maliciousURL});
+    res.json({riskScore, issue, maliciousURL});
 
 });
 
