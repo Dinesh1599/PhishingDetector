@@ -19,7 +19,7 @@ const detectPhishing = (email) =>{
     //get url from text
 
     const urlRegex = /(https?:\/\/[^\s]+)/g;
-    const urls = email.match(urlRegex);
+    const urls = email.match(urlRegex) || [];
 
      return{riskScore,issue, urls};
 };
