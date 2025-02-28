@@ -1,4 +1,4 @@
-const axios = require('axois');
+const axios = require("axios"); 
 
 let phishURL = new Set();
 
