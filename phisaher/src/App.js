@@ -1,7 +1,8 @@
-
+import { useState } from "react";
 import './App.css';
 
 function App() {
+  const [input, setInput] = useState("")
   return (
     <div className = "page_main">
       <div className = "TheScreen">
@@ -10,10 +11,19 @@ function App() {
         </div>
         <div className ='contentBody'>
           <div className = 'theStartBtn'>
-            <button>Start</button>
+            <button className="startBtn">Submit</button>
+            <button className="resetBtn">Reset</button>
           </div>
           <div className = 'bodySplit'>
-            
+            <div className = 'split1'>
+              <textarea
+               placeHolder ="Add Text Here"
+               value={input} 
+               onChange={(e) => setInput(e.target.value)}
+              />
+            </div>
+            <div className = 'split2'>2</div>
+
           </div>
         </div>
       </div>
