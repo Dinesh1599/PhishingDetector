@@ -1,12 +1,13 @@
 const e = require('express');
 const Spelling = require('spelling');
 const dicti = require("spelling/dictionaries/en_US");
+const { link } = require('../routes/analyzeRoute');
 const dict = new Spelling(dicti);
 
 
 
 const detectPhishing = (email) =>{
-    let riskScore = 0;
+    let riskScore = {'keyword':0, 'mispells':0, 'link':0};
     let issue = [];
     let errorWords = [];
 
@@ -20,8 +21,8 @@ const detectPhishing = (email) =>{
 
     phishingKeywords.forEach((word)=>{
         if(email.toLowerCase().includes(word)){
-            riskScore+=10;
-            issue.push(`Contains potential phishing phrase" "${word}"`)
+            riskScore.keyword+=10;
+            issue.push(word)
         }
     })
 
@@ -32,13 +33,13 @@ const detectPhishing = (email) =>{
 
     const words = email.replace(/[.,:;!?()]/g, "").split(" ");
 
-    console.log({words})
     
 
      words.forEach(word=>{
          const suggestion = dict.lookup(word);
          if(suggestion.found == false){
             errorWords.push(suggestion.word)
+            riskScore.mispells+=5; 
          }
      })
      return{riskScore,issue, urls,errorWords};

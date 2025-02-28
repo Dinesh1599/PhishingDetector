@@ -14,11 +14,14 @@ router.post("/", async (req,res)=>{
 
      for (let url of urls){
         if(checkOpenPhish(url)){
-            riskScore += 20;
+            riskScore.link += 20;
             maliciousURL.push(url);
             issue.push(`Phishing URL detected: ${url}`);
         };
     }
+
+
+    
 
     res.json({riskScore, issue, maliciousURL, errorWords});
 
