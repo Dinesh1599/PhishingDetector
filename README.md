@@ -1,5 +1,10 @@
 
 <h1 class="text-2xl font-semibold mt-8 mb-4">Phishing Probability Tester</h1>
+  <div class="container mx-auto p-10">
+    <div class="bg-yellow-300 text-center font-bold text-yellow-900 p-6 rounded shadow-lg">
+      💡This project is a <strong>Proof of Concept (PoC)</strong> created solely for demonstration and educational purposes. It is not intended for production use or as a substitute for professional phishing detection systems.
+    </div>
+  </div>
 <h2 class="text-2xl font-semibold mt-8 mb-4">📂 Project Structure</h2>
 <table class="table-auto w-full mb-6">
   <thead>
