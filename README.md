@@ -57,11 +57,3 @@ npm start
   <li>Cloud deployment with HTTPS</li>
   <li>Progress bars and UI animations</li>
 </ul>
-
-<h2 class="text-2xl font-semibold mt-8 mb-4">🤝 Contributions</h2>
-<p class="mb-6">We welcome all contributions! Please open an issue or submit a pull request.</p>
-
-<h2 class="text-2xl font-semibold mt-8 mb-4">📜 License</h2>
-<p>Licensed under <a href="LICENSE" class="text-blue-600 underline">MIT License</a>.</p>
-
-<div class="mt-10 text-center text-xl font-semibold">⭐ If you find this helpful, don't forget to star the repository!</div>
