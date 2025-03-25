@@ -1,5 +1,5 @@
 
-<h1 class="text-2xl font-semibold mt-8 mb-4">Phishing Detector Tool</h1>
+<h1 class="text-2xl font-semibold mt-8 mb-4">Phishing Probability Tester</h1>
 <h2 class="text-2xl font-semibold mt-8 mb-4">📂 Project Structure</h2>
 <table class="table-auto w-full mb-6">
   <thead>
